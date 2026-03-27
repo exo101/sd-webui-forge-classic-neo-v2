@@ -1,8 +1,5 @@
-# Stable Diffusion WebUI Forge - Neo (中文定制版)
+# Stable Diffusion WebUI Forge - Neo (中文改良版)
 
-<p align="center">
-<img src="html\ui.webp" width=512 alt="UI">
-</p>
 
 ## 项目介绍
 
@@ -37,7 +34,9 @@ Stable Diffusion WebUI Forge 是建立在原始 AUTOMATIC1111 Stable Diffusion W
 | **🎥 相机角度选择器** | 3D 可视化多角度提示词选择，支持方位角、高程角、距离调整 |
 | **🎬 多媒体处理sd-webui-multimodal-media** | qwen3-TTS，唇形同步多媒体处理|  |
 | **👁️ 图像识别与语言交互sd-webui-qwen-vision-chat** | 基于qwen3.5视觉模型的图像识别与对话功能 |  
-| **✂️ 图像分割与清理sd-webui-sam-matting** | 图像分割、抠图、背景清理功能 |  
+| **✂️ 图像分割与清理sd-webui-sam-matting** | 图像分割、抠图、背景清理功能 |
+
+### 使用参考：【webui分镜助手插件与qwen3-TTS协作】 https://www.bilibili.com/video/BV1foQzBMErp/?share_source=copy_web&vd_source=6e632e0a48d2988d197f22d4879aabb2
 
 
 ### 修改的旧插件
