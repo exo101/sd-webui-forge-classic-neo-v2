@@ -129,7 +129,7 @@ Stable Diffusion WebUI Forge 是建立在原始 AUTOMATIC1111 Stable Diffusion W
 
 ## 安装
 
-1. 安装 **[Python 3.13.12](https://www.python.org/downloads/release/python-31312/)**
+1. 安装 **[Python 3.13.11]
    - 记得勾选 `Add Python to PATH`
 
 ### 启动
