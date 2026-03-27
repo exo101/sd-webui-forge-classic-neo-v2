@@ -146,9 +146,6 @@ models/vae/
 └── flux2-vae.safetensors
 ```
 
-> [!提示]
-> Klein 模型体积更小，适合显存较小的显卡，生成速度更快
-
 #### Anima 模型
 Anima 是二次元高质量专用模型：
 ```
@@ -198,7 +195,7 @@ models/ControlNet/
 models/ontrolNetPreprocessor/
 ├── dw-ll_ucoco_384.pth  # 
 └── ...
-
+```
 
 ## 模型目录结构
 
