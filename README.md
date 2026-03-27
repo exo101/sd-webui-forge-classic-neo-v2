@@ -1,4 +1,4 @@
-# Stable Diffusion WebUI Forge - Neo 
+# Stable Diffusion WebUI Forge - Neo (中文定制版)
 
 <p align="center">
 <img src="html\ui.webp" width=512 alt="UI">
@@ -45,7 +45,123 @@ Stable Diffusion WebUI Forge 是建立在原始 AUTOMATIC1111 Stable Diffusion W
 > [!重要提示]
 > 导出视频需要安装 **[FFmpeg](https://ffmpeg.org/)**
 
----
+### 模型组件说明
+
+不同类型的模型需要不同的组件文件，以下是各类模型的组件结构：
+使用参考链接https://github.com/Haoming02/sd-webui-forge-classic/wiki/Inference-References
+
+#### SD1.5 / SD2.1 模型
+只需一个 checkpoint 文件即可运行：
+```
+models/Stable-diffusion/
+└── your_model.safetensors  # 包含 UNet + VAE + CLIP
+```
+
+#### SDXL 模型
+同样只需一个 checkpoint 文件：
+```
+models/Stable-diffusion/
+└── sdxl_model.safetensors  # 包含 UNet + VAE + 双文本编码器
+```
+
+#### Flux 模型
+Flux 模型采用 DiT 架构，组件分离存储：
+```
+models/diffusion_models/
+└── flux1-dev-fp8.safetensors    # 或 flux-schnell.safetensors
+
+models/text_encoder/         # T5 文本编码器（可选，首次运行自动下载）
+└── t5xxl_fp16.safetensors
+
+models/clip/                 # CLIP 文本编码器（可选）
+└── clip_l.safetensors
+
+models/VAE/                  # Flux 专用 VAE（可选）
+└── flux_vae.safetensors
+```
+
+> [!提示]
+> Flux 模型首次运行时会自动下载缺失的组件到 `models` 目录
+
+#### Flux.2-Klein 模型
+Flux.2-Klein 是 多模态编辑模型
+```
+models/diffusion_models/
+├── flux2-klein-4b.safetensors   # 4B 轻量版
+└── flux2-klein-9b.safetensors   # 9B 标准版
+
+models/text_encoder/              # 文本编码器（首次运行自动下载）
+└── qwen_3_8b_fp8mixed.safetensors
+└── qwen_3_4b.safetensors
+
+models/vae/
+└── flux2-vae.safetensors
+```
+
+> [!提示]
+> Klein 模型体积更小，适合显存较小的显卡，生成速度更快
+
+#### Anima 模型
+Anima 是二次元高质量专用模型：
+```
+models/unet/
+└── anima.safetensors            # Anima 主模型
+
+models/text_encoder/              # 文本编码器
+├── qwen_3_06b_base.safetensors      # 通义千问编码器
+
+models/VAE/
+└── qwen_image_vae.safetensors       # Qwen-Image 专用 VAE
+```
+
+> [!提示]
+> Anima 模型支持调制引导控制，可在设置中开启以改善生成质量
+
+#### Qwen-Image 模型
+```
+models/unet/
+├── qwen_image_2512_fp8_e4m3fn.safetensors  # 主模型
+models/text_encoder/              # 文本编码器
+├── qwen_2.5_vl_7b_fp8_scaled.safetensors   # 通义千问编码器
+models/VAE/
+└── qwen_image_vae.safetensors       # Qwen-Image 专用 VAE
+```
+
+#### Wan 2.2 视频模型
+
+# 文生视频模型```
+models/unet/
+└── wan2.2_t2v_high_noise_14B_fp8_scaled.safetensors  # 文生视频模型
+└── wan2.2_t2v_low_noise_14B_fp8_scaled.safetensors  # 文生视频模型
+models/text_encoder/              # 文本编码器
+umt5-xx-fp8-scaled.safetensors
+umt5-xxl-enc-bf16.safetensors
+models/VAE/
+└── wan_2.2_vae.safetensors      # Wan 2.2 专用 VAE
+
+
+#### ControlNet 模型
+```
+models/ControlNet/
+├── controlnet-union-sdxl-1.0_promax.safetensors  # 
+└── ...
+```
+
+#### ControlNetPreprocessor预处理模型
+```
+models/ontrolNetPreprocessor/
+├── dw-ll_ucoco_384.pth  # 
+└── ...
+
+#### VAE 模型
+```
+models/VAE/
+├── sdxl_vae.safetensors      # SDXL 专用 VAE
+├── vae-ft-mse-840000.safetensors  # SD1.5 优化 VAE
+└── ...
+```
+
+
 
 ## 插件列表
 
@@ -59,14 +175,14 @@ Stable Diffusion WebUI Forge 是建立在原始 AUTOMATIC1111 Stable Diffusion W
 | **🎬 多媒体处理** | 多媒体文件处理功能 |
 | **👁️ 图像识别与语言交互** | 基于视觉模型的图像识别与对话功能 |
 | **✂️ 图像分割与清理** | 图像分割、抠图、背景清理功能 |
-
+| **🏷️ WD 1.4 标签器** | 自动生成图像标签 |
 
 ### 修改的旧插件
 
 | 插件名称 | 修改说明 |
 |---------|---------|
-| **🔧 修脸插件** | 兼容性优化 |
-| **🏷️ WD 1.4 标签器** | 自动生成图像标签 |
+| **🔧 辅助** | 兼容性优化 |
+| **🏷️ WD 1.4 标签器** | 兼容性优化 |
 
 ### 汉化的内置功能
 
@@ -129,7 +245,7 @@ Stable Diffusion WebUI Forge 是建立在原始 AUTOMATIC1111 Stable Diffusion W
 
 ## 安装
 
-1. 安装 **[Python 3.13.11]
+1. 安装 **[Python 3.13.12](https://www.python.org/downloads/release/python-31312/)**
    - 记得勾选 `Add Python to PATH`
 
 ### 启动
