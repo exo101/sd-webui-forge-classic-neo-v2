@@ -32,19 +32,19 @@ Stable Diffusion WebUI Forge 是建立在原始 AUTOMATIC1111 Stable Diffusion W
 
 | 插件名称 | 功能说明 |
 |---------|---------|
-| **� 美学提升** | qwen3.5图像与视频美学质量分析 | sd-webui-AestheticEnhancement |
-| **� 分镜助手** | 专业的剧本与分镜管理系统，支持多故事、多角色管理，可视化分镜墙编排 | sd-webui-Storyboard Assistant |
-| **🎥 相机角度选择器** | 3D 可视化多角度提示词选择，支持方位角、高程角、距离调整 | sd-webui-camera-angle-selector |
-| **🎬 多媒体处理** | qwen3-TTS，唇形同步多媒体处理| sd-webui-multimodal-media |
-| **👁️ 图像识别与语言交互** | 基于qwen3.5视觉模型的图像识别与对话功能 | sd-webui-qwen-vision-chat |
-| **✂️ 图像分割与清理** | 图像分割、抠图、背景清理功能 | sd-webui-sam-matting |
+| **� 美学提升sd-webui-AestheticEnhancement** | qwen3.5图像与视频美学质量分析 |  
+| **� 分镜助手 sd-webui-Storyboard Assistant** | 专业的剧本与分镜管理系统，支持多故事、多角色管理，可视化分镜墙编排 | 
+| **🎥 相机角度选择器** | 3D 可视化多角度提示词选择，支持方位角、高程角、距离调整 |
+| **🎬 多媒体处理sd-webui-multimodal-media** | qwen3-TTS，唇形同步多媒体处理|  |
+| **👁️ 图像识别与语言交互sd-webui-qwen-vision-chat** | 基于qwen3.5视觉模型的图像识别与对话功能 |  
+| **✂️ 图像分割与清理sd-webui-sam-matting** | 图像分割、抠图、背景清理功能 |  
 
 
 ### 修改的旧插件
 
 | 插件名称 | 修改说明 |
 |---------|---------|
-| **🔧 修脸插件** | 兼容性优化 |
+| **🔧 adetailer修脸** | 兼容性优化 |
 | **🔧 SD-PPP** | PS插件|
 | **🔧 Auto-Photoshop-StableDiffusion-Plugin** | PS插件|
 | **🏷️ WD 1.4 标签器** | 自动生成图像标签 
