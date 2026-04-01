@@ -214,7 +214,6 @@ models/ontrolNetPreprocessor/
 | **VAE** | 变分自编码器，影响图像色彩和细节 |
 | **text_encoder** | 文本编码器模型（T5、CLIP 等） |
 | **clip** | CLIP 视觉-语言模型 |
-| **unet** | UNet 去噪网络模型 |
 | **diffusion_models** | 扩散模型（Flux、SD3 等 DiT 架构） |
 | **embeddings** | 文本反转嵌入向量 |
 | **ControlNet** | ControlNet 控制网络模型 |
